@@ -18,14 +18,18 @@
 StrataCore rejects traditional "black-box" approaches like Markowitz mean-variance optimization. Instead, it relies on a strict, pure-math pipeline that guarantees **100% determinism and explainability** for every percentage point allocated.
 
 **The Pipeline:**
-```mermaid
-graph TD
-    A[Scenarios: Bull / Base / Bear] --> B[Expected Value Calculation]
-    B --> C[Confidence Scoring]
-    C --> D[Structural Filtering Phase 1]
-    D --> E[Constraint-Based Waterfall Allocation Phase 2]
-    E --> F[Exact Portfolio Weights]
-```
+
+Scenarios (Bull / Base / Bear)
+↓
+Expected Value Calculation
+↓
+Confidence Scoring
+↓
+Structural Filtering
+↓
+Constraint-Based Allocation
+↓
+Portfolio Weights
 
 ---
 
@@ -54,8 +58,6 @@ Transparent overview of the current development phase:
 ---
 
 ## 🖼️ Screenshots
-
-*(Replace the placeholder links below with your actual image URLs)*
 
 ### 1. The Allocation Dashboard
 ![Dashboard overview displaying portfolio performance, total cash, and AI narrative](https://via.placeholder.com/800x450?text=Dashboard+Screenshot)
