@@ -58,5 +58,11 @@ Transparent overview of the current development phase:
 ---
 
 ## 🖼️ Screenshots
-![Dashboard overview displaying portfolio performance, total cash, and AI narrative](https://imgur.com/a/std2KQ0)
 
+View screenshots of the StrataCore interface:
+
+  https://imgur.com/a/PxEoWHM
+ 
+  https://imgur.com/a/Dr2PbVO
+
+  https://imgur.com/a/S8eXiRF
