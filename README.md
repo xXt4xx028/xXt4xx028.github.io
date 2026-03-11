@@ -58,12 +58,5 @@ Transparent overview of the current development phase:
 ---
 
 ## 🖼️ Screenshots
-
-### 1. Main Page
 ![Dashboard overview displaying portfolio performance, total cash, and AI narrative](https://imgur.com/a/std2KQ0)
 
-### 2. Allocation DashBoard
-![Matrix showing Bull/Base/Bear inputs side-by-side with final deterministic weights](https://via.placeholder.com/800x450?text=Allocation+Matrix+Screenshot)
-
-### 3. Scenario & Universe Builder
-![User interface for setting constraints and asset probabilities](https://via.placeholder.com/800x450?text=Scenario+Builder+Screenshot)
