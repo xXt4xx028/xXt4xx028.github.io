@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Denova es una plataforma en desarrollo para la gestión de clínicas dentales pequeñas en México.">
+  <meta name="theme-color" content="#111827">
+  <title>Denova | Gestión para clínicas dentales</title>
+  <style>
+    :root {
+      --bg: #090d18;
+      --panel: #111827;
+      --panel-soft: #172033;
+      --text: #f8fafc;
+      --muted: #a9b4c7;
+      --primary: #7c6cff;
+      --primary-2: #4fd1c5;
+      --border: rgba(255,255,255,.10);
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(124,108,255,.22), transparent 34rem),
+        radial-gradient(circle at 90% 12%, rgba(79,209,197,.14), transparent 30rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(9,13,24,.78);
+      border-bottom: 1px solid var(--border);
+    }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: -.03em; }
+    .mark { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, var(--primary), var(--primary-2)); box-shadow: 0 10px 30px rgba(124,108,255,.32); }
+    .links { display: flex; flex-wrap: wrap; gap: 18px; font-size: .94rem; color: var(--muted); }
+    .links a { text-decoration: none; }
+    .links a:hover { color: var(--text); }
+    .hero { padding: 105px 0 82px; text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--border); background: rgba(255,255,255,.04); border-radius: 999px; color: #d8ddff; font-size: .9rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary-2); box-shadow: 0 0 16px var(--primary-2); }
+    h1 { max-width: 880px; margin: 24px auto 18px; font-size: clamp(2.6rem, 7vw, 5.7rem); line-height: .98; letter-spacing: -.06em; }
+    .gradient { background: linear-gradient(90deg, #fff 5%, #b9b0ff 48%, #70e0d7 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { max-width: 760px; margin: 0 auto; color: var(--muted); font-size: clamp(1.05rem, 2.4vw, 1.3rem); }
+    .actions { margin-top: 34px; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 13px; text-decoration: none; font-weight: 750; border: 1px solid var(--border); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), #6656ef); border-color: transparent; box-shadow: 0 14px 38px rgba(124,108,255,.26); }
+    .btn-secondary { background: rgba(255,255,255,.045); }
+    section { padding: 76px 0; }
+    .section-head { max-width: 720px; margin-bottom: 30px; }
+    h2 { font-size: clamp(1.9rem, 4vw, 3.1rem); line-height: 1.08; letter-spacing: -.045em; margin: 0 0 12px; }
+    .section-head p, .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { padding: 25px; border: 1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025)); border-radius: 20px; box-shadow: var(--shadow); }
+    .icon { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; background: rgba(124,108,255,.14); border: 1px solid rgba(124,108,255,.26); font-size: 1.15rem; }
+    .card h3 { margin: 18px 0 8px; font-size: 1.12rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .96rem; }
+    .split { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; align-items: stretch; }
+    .status { display: flex; flex-direction: column; justify-content: center; padding: 34px; }
+    .status-list { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; color: var(--muted); }
+    .status-list li { display: flex; gap: 10px; }
+    .check { color: var(--primary-2); font-weight: 900; }
+    .price { display: flex; flex-direction: column; justify-content: center; padding: 34px; background: linear-gradient(145deg, rgba(124,108,255,.18), rgba(79,209,197,.08)); }
+    .price strong { display: block; font-size: 2rem; margin: 8px 0 10px; letter-spacing: -.04em; }
+    .notice { margin-top: 18px; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid var(--border); color: var(--muted); font-size: .92rem; }
+    .contact { text-align: center; padding: 40px; }
+    footer { padding: 30px 0 45px; border-top: 1px solid var(--border); color: var(--muted); font-size: .92rem; }
+    .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    .footer-links a { text-decoration: none; }
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .hero { padding-top: 78px; }
+      .grid { grid-template-columns: 1fr; }
+      .card, .status, .price, .contact { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Navegación principal">
+        <a class="brand" href="#inicio"><span class="mark">D</span><span>Denova</span></a>
+        <div class="links">
+          <a href="#funciones">Funciones</a>
+          <a href="#estado">Estado</a>
+          <a href="#modelo">Modelo comercial</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow"><span class="dot"></span> Software para clínicas dentales · Acceso anticipado</span>
+        <h1><span class="gradient">La operación de tu clínica, en un solo lugar.</span></h1>
+        <p class="lead">Denova es una plataforma en desarrollo para ayudar a clínicas dentales pequeñas a organizar pacientes, agenda, tratamientos, pagos y documentos desde una experiencia clara y moderna.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:bryannpx120@gmail.com?subject=Información%20sobre%20Denova">Solicitar información</a>
+          <a class="btn btn-secondary" href="#funciones">Conocer funciones</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="funciones">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Herramientas pensadas para el trabajo diario</h2>
+          <p>El objetivo de Denova es reducir tareas repetitivas y mantener la información clínica y administrativa mejor organizada.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="icon">📅</div><h3>Agenda clínica</h3><p>Vista diaria y semanal, citas recurrentes, reagendado, lista de espera y disponibilidad por profesional.</p></article>
+          <article class="card"><div class="icon">🧑‍⚕️</div><h3>Pacientes</h3><p>Expedientes, historial, línea de tiempo, odontograma, archivos y seguimiento de atención.</p></article>
+          <article class="card"><div class="icon">🦷</div><h3>Tratamientos</h3><p>Planes de tratamiento, cotizaciones y relación entre procedimientos, citas y pagos.</p></article>
+          <article class="card"><div class="icon">💳</div><h3>Pagos y caja</h3><p>Registro de pagos, recibos, saldos, gastos, cortes y reportes administrativos.</p></article>
+          <article class="card"><div class="icon">📄</div><h3>Documentos</h3><p>Recetas, consentimientos, recibos, cotizaciones y estados de cuenta en formatos compartibles.</p></article>
+          <article class="card"><div class="icon">📊</div><h3>Reportes</h3><p>Información operativa para consultar ingresos, actividad, cuentas pendientes y desempeño general.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="estado">
+      <div class="wrap split">
+        <article class="card status">
+          <span class="eyebrow"><span class="dot"></span> Estado del producto</span>
+          <h2 style="margin-top:18px">Denova está en desarrollo activo</h2>
+          <p class="muted">La plataforma se encuentra en fase de construcción y validación. Algunas funciones pueden cambiar antes del lanzamiento comercial.</p>
+          <ul class="status-list">
+            <li><span class="check">✓</span><span>Enfoque en clínicas pequeñas de uno a tres doctores.</span></li>
+            <li><span class="check">✓</span><span>Experiencia móvil como prioridad.</span></li>
+            <li><span class="check">✓</span><span>Acceso anticipado sujeto a disponibilidad.</span></li>
+          </ul>
+        </article>
+        <article class="card price" id="modelo">
+          <span class="muted">Modelo comercial previsto</span>
+          <strong>Suscripción de software</strong>
+          <p class="muted">Los planes, precios, periodicidad y funciones incluidas se mostrarán claramente antes de que cualquier cliente autorice un cobro.</p>
+          <div class="notice">No se realizan cargos desde esta página. Cualquier pago será procesado mediante un proveedor de pagos seguro y con confirmación previa del cliente.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <article class="card contact">
+          <h2>¿Quieres conocer Denova?</h2>
+          <p class="muted">Para información sobre disponibilidad, acceso anticipado o soporte, escríbenos por correo.</p>
+          <div class="actions"><a class="btn btn-primary" href="mailto:bryannpx120@gmail.com">bryannpx120@gmail.com</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 Denova. Proyecto independiente en desarrollo.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacidad</a>
+        <a href="terms.html">Términos</a>
+        <a href="refunds.html">Cancelaciones y reembolsos</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
